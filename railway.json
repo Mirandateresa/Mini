@@ -1,0 +1,10 @@
+@"
+{
+  \"build\": {
+    \"builder\": \"NIXPACKS\"
+  },
+  \"deploy\": {
+    \"startCommand\": \"python manage.py migrate && gunicorn calculwinilang_django.wsgi --bind 0.0.0.0:`$PORT\"
+  }
+}
+"@ | Out-File -FilePath "railway.json" -Encoding ASCII
