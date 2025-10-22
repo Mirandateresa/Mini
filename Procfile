@@ -1,0 +1,1 @@
+web: python manage.py migrate && gunicorn calculwinilang_django.wsgi --bind 0.0.0.0:$PORT
