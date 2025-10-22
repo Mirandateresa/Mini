@@ -1,5 +1,5 @@
-# Crear con contenido JSON válido
-$jsonContent = @'
+# Crear el contenido EXACTO
+$json = @'
 {
   "build": {
     "builder": "NIXPACKS"
@@ -10,4 +10,5 @@ $jsonContent = @'
 }
 '@
 
-$jsonContent | Out-File -FilePath "railway.json" -Encoding UTF8
+# Guardar SIN caracteres adicionales
+[System.IO.File]::WriteAllText("$PWD\railway.json", $json, [System.Text.Encoding]::UTF8)
